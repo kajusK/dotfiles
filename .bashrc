@@ -35,7 +35,7 @@ export KISYSMOD=/home/kajus/Prace/dps/kicad/kicad-library/modules
 touch $HOME/.dbus/Xdbus
 chmod 600 $HOME/.dbus/Xdbus
 
-PS1='\[\e[1;32m\]\u@\h\] \[\e[01;34m\]\w \$\]\[\e[00m\] '
+PS1='\[\e[1;32m\]\u@\h \[\e[01;34m\]\w \$\[\e[00m\] '
 
 #run when opening terminal
 uptime
