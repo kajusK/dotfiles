@@ -24,6 +24,9 @@ HISTCONTROL=ignoredups:erasedups
 shopt -s histappend
 PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 
+#update LINES and COLUMNS on resize
+shopt -s checkwinsize
+
 export EDITOR=/usr/bin/vim
 export VISUAL=$EDITOR
 
@@ -36,6 +39,14 @@ touch $HOME/.dbus/Xdbus
 chmod 600 $HOME/.dbus/Xdbus
 
 PS1='\[\e[1;32m\]\u@\h \[\e[01;34m\]\w \$\[\e[00m\] '
+
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
 
 #run when opening terminal
 uptime
